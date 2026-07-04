@@ -123,7 +123,7 @@ def displayResult(WIN, isWin, word):
 
 def drawHangman(WIN, attempts_left):
     x = WIDTH // 2
-    y = 40
+    y = 80
 
     pygame.draw.line(WIN, (160, 160, 190), (x-50, y+170), (x+50, y+170), 4)
     pygame.draw.line(WIN, (160, 160, 190), (x, y), (x, y+170), 4)

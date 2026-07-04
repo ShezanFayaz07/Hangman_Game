@@ -78,7 +78,7 @@ def draw_game():
     displayWordProgress(WIN, selected_word, guessed_letters, attempts_left)
 
     display_initialization_text = font_small.render(initialize_message, True, (140, 160, 190))
-    WIN.blit(display_initialization_text, (WIDTH//2 - display_initialization_text.get_width()//2, 240))
+    WIN.blit(display_initialization_text, (WIDTH//2 - display_initialization_text.get_width()//2, 280))
 
     validation_text = font_small.render(validation_message, True, (255, 180, 30))
     WIN.blit(validation_text, (WIDTH//2 - validation_text.get_width()//2, 360))
