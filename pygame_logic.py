@@ -121,6 +121,31 @@ def displayResult(WIN, isWin, word):
     return_message_text = font_small.render(returnMessage, True, (150, 180, 220))
     WIN.blit(return_message_text, (WIDTH//2 - return_message_text.get_width()//2, 480))
 
+def drawHangman(WIN, attempts_left):
+    x = WIDTH // 2
+    y = 40
+
+    pygame.draw.line(WIN, (160, 160, 190), (x-50, y+170), (x+50, y+170), 4)
+    pygame.draw.line(WIN, (160, 160, 190), (x, y), (x, y+170), 4)
+    pygame.draw.line(WIN, (160, 160, 190), (x, y), (x+70, y), 4)
+    pygame.draw.line(WIN, (160, 160, 190), (x+70, y), (x+70, y+25), 3)
+
+    wrong = 6 - attempts_left
+
+    if wrong >= 1:
+        pygame.draw.circle(WIN, (220, 220, 240), (x+70, y+45), 18, 3)
+    if wrong >= 2:
+        pygame.draw.line(WIN, (220, 220, 240), (x+70, y+63), (x+70, y+130), 3)
+    if wrong >= 3:
+        pygame.draw.line(WIN, (220, 220, 240), (x+70, y+75), (x+40, y+100), 3)
+    if wrong >= 4:
+        pygame.draw.line(WIN, (220, 220, 240), (x+70, y+75), (x+100, y+100), 3)
+    if wrong >= 5:
+        pygame.draw.line(WIN, (220, 220, 240), (x+70, y+130), (x+45, y+165), 3)
+    if wrong >= 6:
+        pygame.draw.line(WIN, (220, 220, 240), (x+70, y+130), (x+95, y+165), 3)
+
+
 def checkWinCondition(guessed_letters, selected_word):
     for letter in selected_word:
         if letter not in guessed_letters:

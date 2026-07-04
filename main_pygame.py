@@ -2,7 +2,7 @@ import pygame
 pygame.init()
 
 
-from pygame_logic import checkLoseCondition, displayWordProgress, getUserGuess, initializeGameState, processGuess, displayResult, checkWinCondition
+from pygame_logic import checkLoseCondition, displayWordProgress, getUserGuess, initializeGameState, processGuess, displayResult, checkWinCondition, drawHangman
 
 
 info = pygame.display.Info()
@@ -74,6 +74,7 @@ def draw_rules():
 
 def draw_game():
     WIN.fill((25, 25, 40))
+    drawHangman(WIN, attempts_left)
     displayWordProgress(WIN, selected_word, guessed_letters, attempts_left)
 
     display_initialization_text = font_small.render(initialize_message, True, (140, 160, 190))
